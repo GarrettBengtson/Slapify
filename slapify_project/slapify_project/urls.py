@@ -16,11 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-# use include() to add paths from the catalog application
+# use include() to add paths from the slapify application
 from django.urls import include
+# add URL maps to redirect the base URL to slapify app
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('slapify/', include('slapify_web_app.urls')),
+    path('', RedirectView.as_view(url='slapify/', permanent=True)),
 
     # Add Django site authentication urls (for login, logout, password management)
     path('accounts/', include('django.contrib.auth.urls')),

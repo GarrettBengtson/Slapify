@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'slapify_web_app',
+    'slapify_web_app.apps.SlapifyWebAppConfig',
 ]
 
 MIDDLEWARE = [
