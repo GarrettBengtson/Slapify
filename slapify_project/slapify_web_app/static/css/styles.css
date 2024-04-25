@@ -1,0 +1,22 @@
+body {
+    background-color: rgb(58, 58, 58);
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+}
+
+.navbar {
+    background-color: black;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: inline;
+    color: rgb(209, 209, 209);
+}
