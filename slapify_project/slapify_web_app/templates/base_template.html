@@ -17,26 +17,30 @@
     <div>
         <ul class="navbar">
             {% if user.is_authenticated %}
-            <li>User: {{ user.get_username }}</li>
+            <li>
+                <a href="{% url 'index' %}">Home</a>
+            </li>
             <li>
                 <img src="{% static 'Slapify_logo.png' %}" alt="Slapify Logo"
                 width="85">
             </li>
             <li>
+                User: {{ user.get_username }}
                 <form id="logout-form" method="post" action="{% url 'logout' %}">
                 {% csrf_token %}
                 <button type="submit" class="btn btn-link">Logout</button>
                 </form>
             </li>
             {% else %}
-            <li></li>
+            <li><a href="{% url 'index' %}">Home</a></li>
             <li>
                 <img src="{% static 'Slapify_logo.png' %}" alt="Slapify Logo"
                 width="85">
             </li>
-            <li><a href="{% url 'login' %}?next={{ request.path }}">Login</a></li>
+            <li><a href="{% url 'login' %}">Login</a></li>
             {% endif %}
         </ul>
     </div>
+    <div>{% block content %}{% endblock content %}</div>
 </body>
 </html>
