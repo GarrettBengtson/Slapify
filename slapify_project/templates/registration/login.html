@@ -37,7 +37,12 @@
       </form>
 
       <p>
-        <a href="{% url 'password_reset' %}">Lost password?</a>
+        Forgot password?
+        <a href="{% url 'password_reset' %}">Reset password</a>
+      </p>
+      <p>
+        Don't have an account?
+        <a href="{% url 'create_account' %}">Create account</a>
       </p>
   </div>
 {% endblock %}
