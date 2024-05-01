@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'slapify_web_app.apps.SlapifyWebAppConfig',
+    'slapify_web_app',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -128,3 +129,5 @@ LOGIN_REDIRECT_URL = '/'
 
 # For testing email
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+AUTH_USER_MODEL = "slapify_web_app.User"

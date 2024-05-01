@@ -1,14 +1,14 @@
 from django.shortcuts import render, redirect
-from .forms import CustomUserCreationForm
+from .forms import CreateAccountForm
 
 def create_account(request):
     if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
+        form = CreateAccountForm(request.POST)
         if form.is_valid():
-            user = form.save()
+            form.save()
             return redirect('/slapify')
     else:
-        form = CustomUserCreationForm()
+        form = CreateAccountForm()
 
     args = {'form': form}
     return render(request, './registration/create_account.html', args)
